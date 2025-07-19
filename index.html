@@ -110,16 +110,7 @@
             userId: Telegram.WebApp.initDataUnsafe.user?.id
         }));
     });
-            button.addEventListener('click', () => {
-        // Отправляем данные в Telegram
-        Telegram.WebApp.sendData(JSON.stringify({
-            accepted: true,
-            userId: Telegram.WebApp.initDataUnsafe.user?.id
-        }));
-        
-        // Закрываем всплывающее окно
-        Telegram.WebApp.close();  // <-- ЭТА СТРОЧКА ЗАКРЫВАЕТ ОКНО
-    });
+        Telegram.WebApp.close();
     </script>
 </body>
 </html>
