@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Добавьте эту строку в <head> -->
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пользовательское соглашение</title>
@@ -95,24 +94,17 @@
         });
 
         button.addEventListener('click', () => {
-            // Отправляем данные в Telegram
+            // Отправляем данные в Telegram и закрываем приложение
             Telegram.WebApp.sendData(JSON.stringify({
                 accepted: true,
                 userId: Telegram.WebApp.initDataUnsafe.user?.id
             }));
-            Telegram.WebApp.close()
+            Telegram.WebApp.close(); // Закрыть веб-приложение
         });
 
         // Инициализация WebApp
         Telegram.WebApp.ready();
         Telegram.WebApp.expand(); // Раскрываем на весь экран
-        button.addEventListener('click', () => {
-        // Отправляем данные в Telegram
-        Telegram.WebApp.sendData(JSON.stringify({
-            accepted: true,
-            userId: Telegram.WebApp.initDataUnsafe.user?.id
-        }));
-    });
     </script>
 </body>
 </html>
