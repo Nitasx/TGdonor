@@ -103,6 +103,13 @@
         // Инициализация WebApp
         Telegram.WebApp.ready();
         Telegram.WebApp.expand(); // Раскрываем на весь экран
+        button.addEventListener('click', () => {
+        // Отправляем данные в Telegram
+        Telegram.WebApp.sendData(JSON.stringify({
+            accepted: true,
+            userId: Telegram.WebApp.initDataUnsafe.user?.id
+        }));
+    });
     </script>
 </body>
 </html>
